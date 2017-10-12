@@ -358,18 +358,32 @@
       
         
           
-          IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html
-过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。  
-开发Tips
-类似
-          ...
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/09/25/微信小程序开发笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>IDE： 微信开发者工具 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html</a></p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>小程序账号申请，有唯一id。<br>账号认证， 个人 or 公司<br>开发<br>调试： 依赖开发工具<br>提交<br>审核， 腾讯根据UI规范等审核。  </p>
+<h2 id="开发Tips"><a href="#开发Tips" class="headerlink" title="开发Tips"></a>开发Tips</h2><ul>
+<li>类似 react-native的写法。只是有独有的api</li>
+<li><code>.wxss</code>文件类似<code>.css</code></li>
+<li><code>.wxml</code> 类似 <code>.html</code></li>
+<li>依赖 <code>flex</code> 布局</li>
+<li>页面最外层容器强制命名为 <code>.container</code></li>
+<li>js ixml wuss json</li>
+<li>无document，不能直接操作DOM</li>
+<li>全局变量无window， 仅有 page。 window上的方法和属性无法使用</li>
+<li>无数据库，无持久数据存储。 只有缓存和文件存储</li>
+</ul>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>开发者工具支持公众号和小程序的开发</li>
+<li>申请appid：无id，只能在IDE下预览</li>
+<li>备案域名和证书：就是要有正式可用的域名，仅支持https</li>
+</ul>
+<h2 id="需要看的文档"><a href="#需要看的文档" class="headerlink" title="需要看的文档"></a>需要看的文档</h2><ul>
+<li>各种规范：包括UI规范, 确认还有哪些规范</li>
+<li>sublime 等开发环境是否有 .wxml .wxss 的 plugin</li>
+<li>生命周期函数都有哪些</li>
+<li>app.json的配置项有哪些</li>
+</ul>
+
+          
         
       
     </div>
@@ -484,20 +498,163 @@
       
         
           
-          基本概念remote : 远程仓库  
-区域Workspace : 工作区Stage : 缓存Repository : 本地仓库  
-文件状态modified 对应 Workspace的修改staged 对应 stage的修改committed 对应 Repository的仓库版本
-命令
-init
+            <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><code>remote</code> : 远程仓库  </p>
+<h4 id="区域"><a href="#区域" class="headerlink" title="区域"></a>区域</h4><p><code>Workspace</code> : 工作区<br><code>Stage</code> : 缓存<br><code>Repository</code> : 本地仓库  </p>
+<h4 id="文件状态"><a href="#文件状态" class="headerlink" title="文件状态"></a>文件状态</h4><p><code>modified</code> 对应 <code>Workspace</code>的修改<br><code>staged</code> 对应 <code>stage</code>的修改<br><code>committed</code> 对应 <code>Repository</code>的仓库版本</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ol>
+<li><p>init</p>
+<p> git init<br> git init [project-name]<br> git clone [project-name]</p>
+</li>
+<li><p>config<br>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。<br> git config –set</p>
+</li>
+<li><p>add/rm</p>
+<p> $ git add [file1] [file2] …    </p>
+<p> $ git add [dir]               </p>
+<p> $ git add .</p>
+<p> $ git add -p        // 确认所有变更</p>
+</li>
+</ol>
+<p>删除工作区文件，并且将这次删除放入暂存区</p>
+<pre><code>$ git rm [file1] [file2] ...
+</code></pre><p>停止追踪指定文件，但该文件会保留在工作区</p>
+<pre><code>$ git rm --cached [file]
+</code></pre><p>改名文件，并且将这个改名放入暂存区</p>
+<pre><code>$ git mv [file-original] [file-renamed]
+</code></pre><ol>
+<li><p>commit</p>
+<p> $ git commit -m [message]</p>
+<p> $ git commit [file1] [file2] … -m [message]</p>
+<p> $ git commit -a    </p>
+<p> $ git commit -v    </p>
+<p> $ git commit -amend   </p>
+<p> $ git commit –amend -m [message]     </p>
+</li>
+<li><p>branch</p>
+<p> $ git branch</p>
+</li>
+</ol>
+<p>列出所有远程分支</p>
+<pre><code>$ git branch -r
+</code></pre><p>列出所有本地分支和远程分支</p>
+<pre><code>$ git branch -a
+</code></pre><p>新建一个分支，但依然停留在当前分支</p>
+<pre><code>$ git branch [branch-name]
+</code></pre><p>新建一个分支，并切换到该分支</p>
+<pre><code>$ git checkout -b [branch]
+</code></pre><p>新建一个分支，指向指定commit</p>
+<pre><code>$ git branch [branch] [commit]
+</code></pre><p>新建一个分支，与指定的远程分支建立追踪关系</p>
+<pre><code>$ git branch --track [branch] [remote-branch]
+</code></pre><p>切换到指定分支，并更新工作区</p>
+<pre><code>$ git checkout [branch-name]
+</code></pre><p>切换到上一个分支</p>
+<pre><code>$ git checkout -
+</code></pre><p>建立追踪关系，在现有分支与指定的远程分支之间</p>
+<pre><code>$ git branch --set-upstream [branch] [remote-branch]
+</code></pre><p>合并指定分支到当前分支</p>
+<pre><code>$ git merge [branch]
+</code></pre><p>选择一个commit，合并进当前分支</p>
+<pre><code>$ git cherry-pick [commit]
+</code></pre><p>删除分支</p>
+<pre><code>$ git branch -d [branch-name]
+</code></pre><p>删除远程分支</p>
+<pre><code>$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+</code></pre><ol>
+<li>info</li>
+</ol>
+<p>显示有变更的文件</p>
+<pre><code>$ git status
+</code></pre><p>显示当前分支的版本历史</p>
+<pre><code>$ git log
+</code></pre><p>显示commit历史，以及每次commit发生变更的文件</p>
+<pre><code>$ git log --stat
+</code></pre><p>搜索提交历史，根据关键词</p>
+<pre><code>$ git log -S [keyword]
+</code></pre><p>显示某个commit之后的所有变动，每个commit占据一行</p>
+<pre><code>$ git log [tag] HEAD --pretty=format:%s
+</code></pre><p>显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件</p>
+<pre><code>$ git log [tag] HEAD --grep feature
+</code></pre><p>显示某个文件的版本历史，包括文件改名</p>
+<pre><code>$ git log --follow [file]
+$ git whatchanged [file]
+</code></pre><p>显示指定文件相关的每一次diff</p>
+<pre><code>$ git log -p [file]
+</code></pre><p>显示过去5次提交</p>
+<pre><code>$ git log -5 --pretty --oneline
+</code></pre><p>显示所有提交过的用户，按提交次数排序</p>
+<pre><code>$ git shortlog -sn
+</code></pre><p>显示指定文件是什么人在什么时间修改过</p>
+<pre><code>$ git blame [file]
+</code></pre><p>显示暂存区和工作区的差异</p>
+<pre><code>$ git diff
+</code></pre><p>显示暂存区和上一个commit的差异</p>
+<pre><code>$ git diff --cached [file]
+</code></pre><p>显示工作区与当前分支最新commit之间的差异</p>
+<pre><code>$ git diff HEAD
+</code></pre><p>显示两次提交之间的差异</p>
+<pre><code>$ git diff [first-branch]...[second-branch]
+</code></pre><p>显示今天你写了多少行代码</p>
+<pre><code>$ git diff --shortstat &quot;@{0 day ago}&quot;
+</code></pre><p>显示某次提交的元数据和内容变化</p>
+<pre><code>$ git show [commit]
+</code></pre><p>显示某次提交发生变化的文件</p>
+<pre><code>$ git show --name-only [commit]
+</code></pre><p>显示某次提交时，某个文件的内容</p>
+<pre><code>$ git show [commit]:[filename]
+</code></pre><p>显示当前分支的最近几次提交</p>
+<pre><code>$ git reflog
+</code></pre><ol>
+<li>remote</li>
+</ol>
+<p>下载远程仓库的所有变动</p>
+<pre><code>$ git fetch [remote]
+</code></pre><p>显示所有远程仓库</p>
+<pre><code>$ git remote -v
+</code></pre><p>显示某个远程仓库的信息</p>
+<pre><code>$ git remote show [remote]
+</code></pre><p>增加一个新的远程仓库，并命名</p>
+<pre><code>$ git remote add [shortname] [url]
+</code></pre><p>取回远程仓库的变化，并与本地分支合并</p>
+<pre><code>$ git pull [remote] [branch]
+</code></pre><p>上传本地指定分支到远程仓库</p>
+<pre><code>$ git push [remote] [branch]
+</code></pre><p>强行推送当前分支到远程仓库，即使有冲突</p>
+<pre><code>$ git push [remote] --force
+</code></pre><p>推送所有分支到远程仓库</p>
+<pre><code>$ git push [remote] --all
+</code></pre><ol>
+<li>undo</li>
+</ol>
+<p>恢复暂存区的指定文件到工作区</p>
+<pre><code>$ git checkout [file]
+</code></pre><p>恢复某个commit的指定文件到暂存区和工作区</p>
+<pre><code>$ git checkout [commit] [file]
+</code></pre><p>恢复暂存区的所有文件到工作区</p>
+<pre><code>$ git checkout .
+</code></pre><p>重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</p>
+<pre><code>$ git reset [file]
+</code></pre><p>重置暂存区与工作区，与上一次commit保持一致</p>
+<pre><code>$ git reset --hard
+</code></pre><p>重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</p>
+<pre><code>$ git reset [commit]
+</code></pre><p>重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</p>
+<pre><code>$ git reset --hard [commit]
+</code></pre><p>重置当前HEAD为指定commit，但保持暂存区和工作区不变</p>
+<pre><code>$ git reset --keep [commit]
+</code></pre><p>新建一个commit，用来撤销指定commit<br>后者的所有变化都将被前者抵消，并且应用到当前分支</p>
+<pre><code>$ git revert [commit]
+</code></pre><p>暂时将未提交的变化移除，稍后再移入</p>
+<pre><code>$ git stash
+$ git stash pop
+</code></pre><ol>
+<li><p>tag</p>
+<p> PASS</p>
+</li>
+</ol>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><p>stash 用于缓存worspace的修改，建议仅在临时任务的时候使用。一不小心就会丢失代码。如果有大量的版本又不方便提交，建议使用branch</p>
 
-          ...
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/30/git笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -612,17 +769,10 @@ init
       
         
           
-          一直不愿意开blog。最近老被人说浮躁，总结了工作三年来的经历。
-总体来说项目做了不少，但是知识体系千疮百孔，需要一个途径去梳理学的这些东西。
+            <p>一直不愿意开blog。<br>最近老被人说浮躁，总结了工作三年来的经历。</p>
+<p>总体来说项目做了不少，但是知识体系千疮百孔，需要一个途径去梳理学的这些东西。</p>
 
           
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/17/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
