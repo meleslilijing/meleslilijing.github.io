@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="description" content="03 查找和排序Udacity的内容太少了，自己还可以看一些排序算法 分治 把问题拆解成小问题 各个小问题求解 小问题的解合并成最终解  排序 冒泡 选择 归并（分治法） 快速 快速排序 in place 二分查找  排序代码 var swap = function (array, p1, p2) {     const temp = array[p1]     array[p1] = array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序 笔记">
-<meta property="og:url" content="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/index.html">
+<meta property="og:title" content="数据结构基础03 查找和排序">
+<meta property="og:url" content="https://meleslilijing.github.io/2017/10/25/数据结构基础03-查找和排序/index.html">
 <meta property="og:site_name" content="李理敬">
-<meta property="og:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta property="og:description" content="03 查找和排序Udacity的内容太少了，自己还可以看一些排序算法 分治 把问题拆解成小问题 各个小问题求解 小问题的解合并成最终解  排序 冒泡 选择 归并（分治法） 快速 快速排序 in place 二分查找  排序代码 var swap = function (array, p1, p2) {     const temp = array[p1]     array[p1] = array">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T04:04:00.000Z">
+<meta property="og:updated_time" content="2017-10-25T03:50:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序 笔记">
-<meta name="twitter:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="twitter:title" content="数据结构基础03 查找和排序">
+<meta name="twitter:description" content="03 查找和排序Udacity的内容太少了，自己还可以看一些排序算法 分治 把问题拆解成小问题 各个小问题求解 小问题的解合并成最终解  排序 冒泡 选择 归并（分治法） 快速 快速排序 in place 二分查找  排序代码 var swap = function (array, p1, p2) {     const temp = array[p1]     array[p1] = array">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/"/>
+  <link rel="canonical" href="https://meleslilijing.github.io/2017/10/25/数据结构基础03-查找和排序/"/>
 
 
 
 
 
-  <title> 微信小程序 笔记 | 李理敬 </title>
+  <title> 数据结构基础03 查找和排序 | 李理敬 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +227,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/">
+  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/10/25/数据结构基础03-查找和排序/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lilijing">
@@ -251,7 +251,7 @@
             
             
               
-                微信小程序 笔记
+                数据结构基础03 查找和排序
               
             
           </h1>
@@ -264,8 +264,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T12:03:38+08:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T11:49:55+08:00">
+                2017-10-25
               </time>
             
 
@@ -300,31 +300,145 @@
       
 
       
-        <p>IDE： 微信开发者工具 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html</a></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>小程序账号申请，有唯一id。<br>账号认证， 个人 or 公司<br>开发<br>调试： 依赖开发工具<br>提交<br>审核， 腾讯根据UI规范等审核。  </p>
-<h2 id="开发Tips"><a href="#开发Tips" class="headerlink" title="开发Tips"></a>开发Tips</h2><ul>
-<li>类似 react-native的写法。只是有独有的api</li>
-<li><code>.wxss</code>文件类似<code>.css</code></li>
-<li><code>.wxml</code> 类似 <code>.html</code></li>
-<li>依赖 <code>flex</code> 布局</li>
-<li>页面最外层容器强制命名为 <code>.container</code></li>
-<li>js ixml wuss json</li>
-<li>无document，不能直接操作DOM</li>
-<li>全局变量无window， 仅有 page。 window上的方法和属性无法使用</li>
-<li>无数据库，无持久数据存储。 只有缓存和文件存储</li>
+        <h1 id="03-查找和排序"><a href="#03-查找和排序" class="headerlink" title="03 查找和排序"></a>03 查找和排序</h1><p>Udacity的内容太少了，自己还可以看一些排序算法</p>
+<h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h2><ul>
+<li>把问题拆解成小问题</li>
+<li>各个小问题求解</li>
+<li>小问题的解合并成最终解</li>
 </ul>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>开发者工具支持公众号和小程序的开发</li>
-<li>申请appid：无id，只能在IDE下预览</li>
-<li>备案域名和证书：就是要有正式可用的域名，仅支持https</li>
-</ul>
-<h2 id="需要看的文档"><a href="#需要看的文档" class="headerlink" title="需要看的文档"></a>需要看的文档</h2><ul>
-<li>各种规范：包括UI规范, 确认还有哪些规范</li>
-<li>sublime 等开发环境是否有 .wxml .wxss 的 plugin</li>
-<li>生命周期函数都有哪些</li>
-<li>app.json的配置项有哪些</li>
-</ul>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><ol>
+<li>冒泡</li>
+<li>选择</li>
+<li>归并（分治法）</li>
+<li>快速</li>
+<li>快速排序 in place</li>
+<li>二分查找</li>
+</ol>
+<p><strong>排序代码</strong></p>
+<pre><code>var swap = function (array, p1, p2) {
+    const temp = array[p1]
+    array[p1] = array[p2]
+    array[p2] = temp
+}
 
+/**
+ * 冒泡排序 
+ * 时间 O(n^2)
+ * 空间 O(1)
+ */
+function bubbleSort(array) {
+    for(var i = 0 i &lt; array.length i++) {
+        for(var j = 0 j &lt; array.length - i - 1 j++) {
+            if(array[j] &gt; array[j+1]) swap(array, j, j+1)
+        }
+    }
+    return array
+}
+
+/**
+ * 选择排序 
+ * 时间 O(n^2)
+ * 空间 O(1)
+ */
+function selectionSort(array) {
+    let min
+
+    for(let i = 0 i &lt; array.length - 1 i++) {
+        min = i
+        for(let j = i + 1 j &lt; array.length j++) {
+            if (array[j] &lt; min) min = j
+        }
+
+        swap(array, min, i)
+    }
+
+    return array
+}
+
+/**
+ * 归并排序
+ * 时间 O(nlogn)
+ * 空间 O(n)
+ */
+function mergeSort(array) {
+    var merge = (left, right) =&gt; {
+        var result = []
+        while (left.length &amp;&amp; right.length) {
+            result.push(left[0] &gt; right[0] ? left.shift() : right.shift())
+        }
+        return result.concat(left, right)
+    }
+
+    if (array.length &lt; 2) return array
+    var mid = parseInt(array.length / 2)
+    return merge(mergetSort(array.slice(0, mid)), mergeSort(array.slice(mid + 1)))
+}
+
+/**
+ * 快速排序
+ * 时 O(nlogn)
+ * 空 O(n)
+ */
+function quickSort(array) {
+    if (array.length &lt; 2) return array.slice(0)
+
+    var pivot = array[0]
+
+    var left = [], right = []
+    for (var i = 1; i &lt; array.length; i++) {
+        if (array[i] &lt;= pivot) left.push(array[i])
+        else right.push(array[i])
+    }
+
+    left.push(pivot);
+    return quickSort(left).concat(quickSort(right))
+}
+
+/**
+ * 快速排序 in place
+ * 时 O(nlogn)
+ * 空 O(1)
+ */
+function quickSortInPlace(array) {
+    if (array.length &lt; 2) return array
+
+    // 划片操作
+    var partical = (array, low, high) =&gt; {
+        var pivot = low
+        for (var i = low+1; i &lt;= high; i++) {
+            if (array[i] &lt; array[pivot]) swap(array, i, pivot), pivot = i
+        }
+        return pivot
+    }
+
+    var sort = (array, low, high) =&gt; {
+        if (high &lt;= low) return
+
+        var index = partical(array, low, high)
+        sort(array, low, index)
+        sort(array, index + 1, high)
+    }
+
+    sort(array, 0, array.length - 1)
+    return array
+}
+</code></pre><p><strong>二分查找：</strong></p>
+<pre><code>function halfSearch(array, value) {
+    if (array.length == 0) return -1
+
+    var search = function(low, high) {
+        if (low &gt; high) return -1
+
+        var mid = parseInt((low + high) / 2)
+        if (array[mid] === value) return mid
+        else if (array[mid] &lt; value ) return search(mid + 1, high)
+        else if (array[mid] &gt; value) return search(low, mid - 1)
+
+    } 
+
+    return search(0, array.length - 1)
+}
+</code></pre>
       
     </div>
 
@@ -350,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/30/git笔记/" rel="next" title="git笔记">
-                <i class="fa fa-chevron-left"></i> git笔记
+              <a href="/2017/10/25/数据结构基础01-简介与效率/" rel="next" title="数据结构基础01 简介与效率">
+                <i class="fa fa-chevron-left"></i> 数据结构基础01 简介与效率
               </a>
             
           </div>
@@ -360,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/算法课01/" rel="prev" title="算法课01">
-                算法课01 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/25/数据结构基础04-映射和哈希算法/" rel="prev" title="数据结构基础04 映射和哈希算法">
+                数据结构基础04 映射和哈希算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发Tips"><span class="nav-number">2.</span> <span class="nav-text">开发Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要看的文档"><span class="nav-number">4.</span> <span class="nav-text">需要看的文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#03-查找和排序"><span class="nav-number">1.</span> <span class="nav-text">03 查找和排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分治"><span class="nav-number">1.1.</span> <span class="nav-text">分治</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">1.2.</span> <span class="nav-text">排序</span></a></li></ol></li></ol></div>
             
 
           </div>

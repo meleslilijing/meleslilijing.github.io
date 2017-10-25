@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="description" content="Functional Programming 笔记TODO 原书地址：JS 函数式编程指南 Function Programming概念：  一种编程范式。通常用于计算密集大于IO密集。 FP以Function作为函数内的基本单位。OO是以Object作为基本单位。 整体就是以数据流的方式分别计算各个Function。最后通过树形积累，形成最终的结果。  一等公民函数 Function作为值处理：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序 笔记">
-<meta property="og:url" content="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/index.html">
+<meta property="og:title" content="Functional Programming 笔记">
+<meta property="og:url" content="https://meleslilijing.github.io/2017/10/25/Functional-Programming-笔记/index.html">
 <meta property="og:site_name" content="李理敬">
-<meta property="og:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta property="og:description" content="Functional Programming 笔记TODO 原书地址：JS 函数式编程指南 Function Programming概念：  一种编程范式。通常用于计算密集大于IO密集。 FP以Function作为函数内的基本单位。OO是以Object作为基本单位。 整体就是以数据流的方式分别计算各个Function。最后通过树形积累，形成最终的结果。  一等公民函数 Function作为值处理：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T04:04:00.000Z">
+<meta property="og:updated_time" content="2017-10-25T04:33:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序 笔记">
-<meta name="twitter:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="twitter:title" content="Functional Programming 笔记">
+<meta name="twitter:description" content="Functional Programming 笔记TODO 原书地址：JS 函数式编程指南 Function Programming概念：  一种编程范式。通常用于计算密集大于IO密集。 FP以Function作为函数内的基本单位。OO是以Object作为基本单位。 整体就是以数据流的方式分别计算各个Function。最后通过树形积累，形成最终的结果。  一等公民函数 Function作为值处理：">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/"/>
+  <link rel="canonical" href="https://meleslilijing.github.io/2017/10/25/Functional-Programming-笔记/"/>
 
 
 
 
 
-  <title> 微信小程序 笔记 | 李理敬 </title>
+  <title> Functional Programming 笔记 | 李理敬 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +227,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/">
+  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/10/25/Functional-Programming-笔记/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lilijing">
@@ -251,7 +251,7 @@
             
             
               
-                微信小程序 笔记
+                Functional Programming 笔记
               
             
           </h1>
@@ -264,8 +264,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T12:03:38+08:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T12:33:23+08:00">
+                2017-10-25
               </time>
             
 
@@ -300,30 +300,47 @@
       
 
       
-        <p>IDE： 微信开发者工具 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html</a></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>小程序账号申请，有唯一id。<br>账号认证， 个人 or 公司<br>开发<br>调试： 依赖开发工具<br>提交<br>审核， 腾讯根据UI规范等审核。  </p>
-<h2 id="开发Tips"><a href="#开发Tips" class="headerlink" title="开发Tips"></a>开发Tips</h2><ul>
-<li>类似 react-native的写法。只是有独有的api</li>
-<li><code>.wxss</code>文件类似<code>.css</code></li>
-<li><code>.wxml</code> 类似 <code>.html</code></li>
-<li>依赖 <code>flex</code> 布局</li>
-<li>页面最外层容器强制命名为 <code>.container</code></li>
-<li>js ixml wuss json</li>
-<li>无document，不能直接操作DOM</li>
-<li>全局变量无window， 仅有 page。 window上的方法和属性无法使用</li>
-<li>无数据库，无持久数据存储。 只有缓存和文件存储</li>
+        <h1 id="Functional-Programming-笔记"><a href="#Functional-Programming-笔记" class="headerlink" title="Functional Programming 笔记"></a>Functional Programming 笔记</h1><p>TODO</p>
+<p>原书地址：<a href="https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/" target="_blank" rel="external">JS 函数式编程指南</a></p>
+<p><strong>Function Programming概念：</strong></p>
+<ul>
+<li>一种编程范式。通常用于<code>计算密集</code>大于<code>IO密集</code>。</li>
+<li>FP以Function作为函数内的基本单位。OO是以Object作为基本单位。</li>
+<li>整体就是以数据流的方式分别计算各个Function。最后通过<code>树形积累</code>，形成最终的结果。</li>
 </ul>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>开发者工具支持公众号和小程序的开发</li>
-<li>申请appid：无id，只能在IDE下预览</li>
-<li>备案域名和证书：就是要有正式可用的域名，仅支持https</li>
+<h2 id="一等公民函数"><a href="#一等公民函数" class="headerlink" title="一等公民函数"></a>一等公民函数</h2><ol>
+<li>Function作为值处理：一等公民。</li>
+<li>无谓的间接层代码欠套</li>
+</ol>
+<p>&gt;<br>    // bad<br>    httpGet(‘/post/2’, function(json){<br>      return renderPost(json);<br>    });<br>    // good<br>    httpGet(‘/post/2’, renderPost);<br>减少无谓的代码量。避免在内部function变更的同时，外部间接层的function进行变更。</p>
+<ol>
+<li>避免this的使用：this 就像一块脏尿布，我尽可能地避免使用它，因为在函数式编程中根本用不到它。然而，在使用其他的类库时，你却不得不向这个疯狂的世界低头。（ 低头的方式就是<code>bind</code>，控制类库和传递的Function ）    。</li>
+</ol>
+<h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h2><ol>
+<li>避免副作用</li>
+<li>相同的输入，得到相同的结果：纯函数就是数学上的函数，而且是函数式编程的全部</li>
+</ol>
+<p>函数是一个界限。无副作用（函数不内的操作不影响外部的值）。<br>同样的输入，一定会有同样的输出。输出的值，不受function外部影响。</p>
+<p>副作用：</p>
+<ul>
+<li>this</li>
+<li>更改文件系统</li>
+<li>往数据库插入记录</li>
+<li>发送一个 http 请求</li>
+<li>可变数据</li>
+<li>打印/log</li>
+<li>获取用户输入</li>
+<li>DOM 查询</li>
+<li>访问系统状态</li>
 </ul>
-<h2 id="需要看的文档"><a href="#需要看的文档" class="headerlink" title="需要看的文档"></a>需要看的文档</h2><ul>
-<li>各种规范：包括UI规范, 确认还有哪些规范</li>
-<li>sublime 等开发环境是否有 .wxml .wxss 的 plugin</li>
-<li>生命周期函数都有哪些</li>
-<li>app.json的配置项有哪些</li>
-</ul>
+<p>总之，所有的操作都在function的界限内</p>
+<h2 id="Curry"><a href="#Curry" class="headerlink" title="Curry"></a>Curry</h2><h2 id="Compose"><a href="#Compose" class="headerlink" title="Compose"></a>Compose</h2><h2 id="参考书目："><a href="#参考书目：" class="headerlink" title="参考书目："></a>参考书目：</h2><ol>
+<li><p>&lt; JS函数式编程指南 &gt; <a href="https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch1.html#一个简单例子" target="_blank" rel="external">https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch1.html#一个简单例子</a></p>
+</li>
+<li><p>&lt; SICP &gt; 计算机的构造与解释</p>
+</li>
+<li>&lt; JavaScript函数式编程 &gt;</li>
+</ol>
 
       
     </div>
@@ -350,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/30/git笔记/" rel="next" title="git笔记">
-                <i class="fa fa-chevron-left"></i> git笔记
+              <a href="/2017/10/25/FLEX-布局/" rel="next" title="FLEX 布局">
+                <i class="fa fa-chevron-left"></i> FLEX 布局
               </a>
             
           </div>
@@ -360,8 +377,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/算法课01/" rel="prev" title="算法课01">
-                算法课01 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/25/Redux-笔记/" rel="prev" title="Redux 笔记">
+                Redux 笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发Tips"><span class="nav-number">2.</span> <span class="nav-text">开发Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要看的文档"><span class="nav-number">4.</span> <span class="nav-text">需要看的文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Functional-Programming-笔记"><span class="nav-number">1.</span> <span class="nav-text">Functional Programming 笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一等公民函数"><span class="nav-number">1.1.</span> <span class="nav-text">一等公民函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纯函数"><span class="nav-number">1.2.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curry"><span class="nav-number">1.3.</span> <span class="nav-text">Curry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compose"><span class="nav-number">1.4.</span> <span class="nav-text">Compose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考书目："><span class="nav-number">1.5.</span> <span class="nav-text">参考书目：</span></a></li></ol></li></ol></div>
             
 
           </div>

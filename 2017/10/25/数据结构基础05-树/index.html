@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="description" content="05 树概念 level parent / child / sibling root / leaf height / depth： 二者的方向相反  树的遍历 Trees Traversal二叉树 广度遍历 BFS 深度遍历 DFS In order pre order post order   搜索 删除  TIPs： 学习树不是目的，目的是理解为什么用树，什么情况下用树。 二叉搜索树 搜索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序 笔记">
-<meta property="og:url" content="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/index.html">
+<meta property="og:title" content="数据结构基础05 树">
+<meta property="og:url" content="https://meleslilijing.github.io/2017/10/25/数据结构基础05-树/index.html">
 <meta property="og:site_name" content="李理敬">
-<meta property="og:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta property="og:description" content="05 树概念 level parent / child / sibling root / leaf height / depth： 二者的方向相反  树的遍历 Trees Traversal二叉树 广度遍历 BFS 深度遍历 DFS In order pre order post order   搜索 删除  TIPs： 学习树不是目的，目的是理解为什么用树，什么情况下用树。 二叉搜索树 搜索">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T04:04:00.000Z">
+<meta property="og:updated_time" content="2017-10-25T04:14:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序 笔记">
-<meta name="twitter:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="twitter:title" content="数据结构基础05 树">
+<meta name="twitter:description" content="05 树概念 level parent / child / sibling root / leaf height / depth： 二者的方向相反  树的遍历 Trees Traversal二叉树 广度遍历 BFS 深度遍历 DFS In order pre order post order   搜索 删除  TIPs： 学习树不是目的，目的是理解为什么用树，什么情况下用树。 二叉搜索树 搜索">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/"/>
+  <link rel="canonical" href="https://meleslilijing.github.io/2017/10/25/数据结构基础05-树/"/>
 
 
 
 
 
-  <title> 微信小程序 笔记 | 李理敬 </title>
+  <title> 数据结构基础05 树 | 李理敬 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +227,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/">
+  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/10/25/数据结构基础05-树/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lilijing">
@@ -251,7 +251,7 @@
             
             
               
-                微信小程序 笔记
+                数据结构基础05 树
               
             
           </h1>
@@ -264,8 +264,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T12:03:38+08:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T12:14:07+08:00">
+                2017-10-25
               </time>
             
 
@@ -300,30 +300,53 @@
       
 
       
-        <p>IDE： 微信开发者工具 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html</a></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>小程序账号申请，有唯一id。<br>账号认证， 个人 or 公司<br>开发<br>调试： 依赖开发工具<br>提交<br>审核， 腾讯根据UI规范等审核。  </p>
-<h2 id="开发Tips"><a href="#开发Tips" class="headerlink" title="开发Tips"></a>开发Tips</h2><ul>
-<li>类似 react-native的写法。只是有独有的api</li>
-<li><code>.wxss</code>文件类似<code>.css</code></li>
-<li><code>.wxml</code> 类似 <code>.html</code></li>
-<li>依赖 <code>flex</code> 布局</li>
-<li>页面最外层容器强制命名为 <code>.container</code></li>
-<li>js ixml wuss json</li>
-<li>无document，不能直接操作DOM</li>
-<li>全局变量无window， 仅有 page。 window上的方法和属性无法使用</li>
-<li>无数据库，无持久数据存储。 只有缓存和文件存储</li>
+        <h1 id="05-树"><a href="#05-树" class="headerlink" title="05 树"></a>05 树</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>level</li>
+<li>parent / child / sibling</li>
+<li>root / leaf</li>
+<li>height / depth： 二者的方向相反</li>
 </ul>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>开发者工具支持公众号和小程序的开发</li>
-<li>申请appid：无id，只能在IDE下预览</li>
-<li>备案域名和证书：就是要有正式可用的域名，仅支持https</li>
+<h2 id="树的遍历-Trees-Traversal"><a href="#树的遍历-Trees-Traversal" class="headerlink" title="树的遍历 Trees Traversal"></a>树的遍历 Trees Traversal</h2><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
+<li>广度遍历 BFS</li>
+<li>深度遍历 DFS<ul>
+<li>In order</li>
+<li>pre order</li>
+<li>post order</li>
 </ul>
-<h2 id="需要看的文档"><a href="#需要看的文档" class="headerlink" title="需要看的文档"></a>需要看的文档</h2><ul>
-<li>各种规范：包括UI规范, 确认还有哪些规范</li>
-<li>sublime 等开发环境是否有 .wxml .wxss 的 plugin</li>
-<li>生命周期函数都有哪些</li>
-<li>app.json的配置项有哪些</li>
+</li>
+<li>搜索</li>
+<li>删除</li>
 </ul>
+<p>TIPs： 学习树不是目的，目的是理解为什么用树，什么情况下用树。</p>
+<h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><ul>
+<li>搜索</li>
+</ul>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆是一种特殊的树<br>堆不一定是二叉树</p>
+<ul>
+<li>大顶堆</li>
+<li>小顶堆</li>
+</ul>
+<p>操作：<br>peek()获取堆顶的值， O(1)<br>search(find_value), O(n)</p>
+<h3 id="堆化："><a href="#堆化：" class="headerlink" title="堆化："></a>堆化：</h3><p>对堆中的所有元素进行重新排序。通常会在插入和删除元素后使用</p>
+<p>操作：</p>
+<ul>
+<li>peek(): O(1)</li>
+<li>extra(): peek() &amp; delete(root)</li>
+<li>search(value) O(n)</li>
+<li>insert(value) O(log(n))</li>
+<li>delete(value) O(log(n))</li>
+</ul>
+<h3 id="实施堆"><a href="#实施堆" class="headerlink" title="实施堆"></a>实施堆</h3><p>将堆以数组形式存储。数组的排序符合堆的要求（大顶堆-降序，小顶堆-升序）</p>
+<h3 id="自平树"><a href="#自平树" class="headerlink" title="自平树"></a>自平树</h3><p>平衡树： 节点仅分散在几个层级<br>非平衡树： 节点分散在多个层级，极端的非平衡树就是链表。每个节点只有一个子节点。<br>自平衡树：是指尽量减少层级的树，在插入和删除时，它会通过某些算法保持自己的平衡性</p>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><p>BST的一种延伸，也是平衡的<br>Rule:</p>
+<ul>
+<li>所有节点被赋予颜色属性，必须为红色或者黑色。</li>
+<li>存在空叶子结点。每个节点如果没有两个叶子，则必须没有子节点。所有空叶子结点必须为黑色。</li>
+<li>如果节点为红色，两个子节点必须为黑色</li>
+<li>根节点必须为黑色</li>
+<li>从相关节点到其后代空节点的每个路径必须包含相同数量的黑节点</li>
+</ul>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>代码已经写很多遍了，就不做了。</p>
 
       
     </div>
@@ -350,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/30/git笔记/" rel="next" title="git笔记">
-                <i class="fa fa-chevron-left"></i> git笔记
+              <a href="/2017/10/25/数据结构基础04-映射和哈希算法/" rel="next" title="数据结构基础04 映射和哈希算法">
+                <i class="fa fa-chevron-left"></i> 数据结构基础04 映射和哈希算法
               </a>
             
           </div>
@@ -360,8 +383,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/算法课01/" rel="prev" title="算法课01">
-                算法课01 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/25/数据结构基础06-技术面试小贴士/" rel="prev" title="数据结构基础06 技术面试小贴士">
+                数据结构基础06 技术面试小贴士 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +491,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发Tips"><span class="nav-number">2.</span> <span class="nav-text">开发Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要看的文档"><span class="nav-number">4.</span> <span class="nav-text">需要看的文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#05-树"><span class="nav-number">1.</span> <span class="nav-text">05 树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树的遍历-Trees-Traversal"><span class="nav-number">1.2.</span> <span class="nav-text">树的遍历 Trees Traversal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树"><span class="nav-number">1.3.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">1.4.</span> <span class="nav-text">二叉搜索树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-number">1.5.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#堆化："><span class="nav-number">1.5.1.</span> <span class="nav-text">堆化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实施堆"><span class="nav-number">1.5.2.</span> <span class="nav-text">实施堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自平树"><span class="nav-number">1.5.3.</span> <span class="nav-text">自平树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#红黑树"><span class="nav-number">1.6.</span> <span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业"><span class="nav-number">1.7.</span> <span class="nav-text">作业</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="description" content="FLEX布局可以参考阮一峰的教程，没什么好记录的。 目前在pc端还会有兼容性问题，还是离不开传统的布局方案（依赖 display 属性 + position属性 + float属性）。 基本概念分为box和item.item的float、clear和vertical-align属性失效。 常用属性： box:  flex-direction: row | row-reverse | column">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序 笔记">
-<meta property="og:url" content="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/index.html">
+<meta property="og:title" content="FLEX 布局">
+<meta property="og:url" content="https://meleslilijing.github.io/2017/10/25/FLEX-布局/index.html">
 <meta property="og:site_name" content="李理敬">
-<meta property="og:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta property="og:description" content="FLEX布局可以参考阮一峰的教程，没什么好记录的。 目前在pc端还会有兼容性问题，还是离不开传统的布局方案（依赖 display 属性 + position属性 + float属性）。 基本概念分为box和item.item的float、clear和vertical-align属性失效。 常用属性： box:  flex-direction: row | row-reverse | column">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T04:04:00.000Z">
+<meta property="og:updated_time" content="2017-10-25T04:31:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序 笔记">
-<meta name="twitter:description" content="IDE： 微信开发者工具 https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html 过程小程序账号申请，有唯一id。账号认证， 个人 or 公司开发调试： 依赖开发工具提交审核， 腾讯根据UI规范等审核。   开发Tips 类似 react-native的写法。只是有独有的api .wxss文件类似.css .wxml 类似">
+<meta name="twitter:title" content="FLEX 布局">
+<meta name="twitter:description" content="FLEX布局可以参考阮一峰的教程，没什么好记录的。 目前在pc端还会有兼容性问题，还是离不开传统的布局方案（依赖 display 属性 + position属性 + float属性）。 基本概念分为box和item.item的float、clear和vertical-align属性失效。 常用属性： box:  flex-direction: row | row-reverse | column">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/"/>
+  <link rel="canonical" href="https://meleslilijing.github.io/2017/10/25/FLEX-布局/"/>
 
 
 
 
 
-  <title> 微信小程序 笔记 | 李理敬 </title>
+  <title> FLEX 布局 | 李理敬 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +227,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/09/25/微信小程序开发笔记/">
+  <link itemprop="mainEntityOfPage" href="https://meleslilijing.github.io/2017/10/25/FLEX-布局/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="lilijing">
@@ -251,7 +251,7 @@
             
             
               
-                微信小程序 笔记
+                FLEX 布局
               
             
           </h1>
@@ -264,8 +264,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T12:03:38+08:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T12:31:33+08:00">
+                2017-10-25
               </time>
             
 
@@ -300,31 +300,73 @@
       
 
       
-        <p>IDE： 微信开发者工具 <a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html</a></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>小程序账号申请，有唯一id。<br>账号认证， 个人 or 公司<br>开发<br>调试： 依赖开发工具<br>提交<br>审核， 腾讯根据UI规范等审核。  </p>
-<h2 id="开发Tips"><a href="#开发Tips" class="headerlink" title="开发Tips"></a>开发Tips</h2><ul>
-<li>类似 react-native的写法。只是有独有的api</li>
-<li><code>.wxss</code>文件类似<code>.css</code></li>
-<li><code>.wxml</code> 类似 <code>.html</code></li>
-<li>依赖 <code>flex</code> 布局</li>
-<li>页面最外层容器强制命名为 <code>.container</code></li>
-<li>js ixml wuss json</li>
-<li>无document，不能直接操作DOM</li>
-<li>全局变量无window， 仅有 page。 window上的方法和属性无法使用</li>
-<li>无数据库，无持久数据存储。 只有缓存和文件存储</li>
+        <h1 id="FLEX布局"><a href="#FLEX布局" class="headerlink" title="FLEX布局"></a>FLEX布局</h1><p>可以参考阮一峰的教程，没什么好记录的。</p>
+<p>目前在pc端还会有兼容性问题，还是离不开传统的布局方案（依赖 display 属性 + position属性 + float属性）。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>分为box和item.<br>item的float、clear和vertical-align属性失效。</p>
+<p><strong>常用属性：</strong></p>
+<p>box:</p>
+<ul>
+<li>flex-direction: row | row-reverse | column | column-reverse; // 排列方向</li>
+<li>flex-wrap: nowrap | wrap | wrap-reverse; // 换行</li>
+<li>flex-flow: <flex-direction> || <flex-wrap>;</flex-wrap></flex-direction></li>
+<li>justify-content: flex-start | flex-end | center | space-between | space-around; // 对齐方式</li>
+<li>align-items:  flex-start | flex-end | center | baseline | stretch; // 单行内纵向对齐</li>
+<li>align-content： flex-start | flex-end | center | space-between | space-around | stretch; // 纵向对齐</li>
 </ul>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>开发者工具支持公众号和小程序的开发</li>
-<li>申请appid：无id，只能在IDE下预览</li>
-<li>备案域名和证书：就是要有正式可用的域名，仅支持https</li>
+<p>item:</p>
+<ul>
+<li>order: interger; // 排列顺序。数值越小，排列越靠前，默认为0。</li>
+<li>flex-grow: number; // 项目的放大比例，默认为0，即如果存在剩余空间，也不放大</li>
+<li>flex-shrink: number; // flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</li>
+<li>flex-basis: length | auto; 项目占据的主轴空间（main size）</li>
+<li>flex: none | [ &lt;’flex-grow’&gt; &lt;’flex-shrink’&gt;? || &lt;’flex-basis’&gt; ] // flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</li>
+<li>align-self: auto | flex-start | flex-end | center | baseline | stretch; // align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</li>
 </ul>
-<h2 id="需要看的文档"><a href="#需要看的文档" class="headerlink" title="需要看的文档"></a>需要看的文档</h2><ul>
-<li>各种规范：包括UI规范, 确认还有哪些规范</li>
-<li>sublime 等开发环境是否有 .wxml .wxss 的 plugin</li>
-<li>生命周期函数都有哪些</li>
-<li>app.json的配置项有哪些</li>
-</ul>
+<p><strong>伪代码如下：</strong></p>
+<pre><code>// html
+&lt;box&gt;
+    &lt;item1&gt;&lt;/item1&gt;
+    &lt;item2&gt;&lt;/item2&gt;
+    &lt;item3&gt;&lt;/item3&gt;
+    ...
+&lt;/box&gt;
+&lt;inline-box&gt;
+    &lt;item1&gt;&lt;/item1&gt;
+    &lt;item2&gt;&lt;/item2&gt;
+    &lt;item3&gt;&lt;/item3&gt;
+    ...        
+&lt;/inline-box&gt;
 
+// css
+.box {
+    display: flex;
+    flex-flow： row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inline-box {
+    display: inline-flex;
+    ...
+}
+
+.item1 {
+    flex-grow: 1;
+}
+
+.item2 {
+    flex-grow: 2;
+}
+
+.item3 {
+    flex-grow: 1;
+    align-self: flex-end;
+}
+
+
+flex-wrap
+justify-content
+</code></pre>
       
     </div>
 
@@ -350,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/30/git笔记/" rel="next" title="git笔记">
-                <i class="fa fa-chevron-left"></i> git笔记
+              <a href="/2017/10/25/前端跨域整理/" rel="next" title="前端跨域整理">
+                <i class="fa fa-chevron-left"></i> 前端跨域整理
               </a>
             
           </div>
@@ -360,8 +402,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/算法课01/" rel="prev" title="算法课01">
-                算法课01 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/25/Functional-Programming-笔记/" rel="prev" title="Functional Programming 笔记">
+                Functional Programming 笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +510,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发Tips"><span class="nav-number">2.</span> <span class="nav-text">开发Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要看的文档"><span class="nav-number">4.</span> <span class="nav-text">需要看的文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FLEX布局"><span class="nav-number">1.</span> <span class="nav-text">FLEX布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li></ol></div>
             
 
           </div>
